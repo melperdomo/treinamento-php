@@ -1,0 +1,30 @@
+services:
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: php.dockerfile
+    container_name: treinamento_php
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./exercicios:/var/www/exercicios
+    networks:
+      - app-network
+
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: nginx.dockerfile
+    container_name: treinamento_php_nginx
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./exercicios:/var/www/exercicios
+      - ./docker/nginx/servers:/etc/nginx/conf.d/servers
+    depends_on:
+      - php
+    networks:
+      - app-network
+
+networks:
+  app-network:
