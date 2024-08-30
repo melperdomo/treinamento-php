@@ -1,14 +1,19 @@
+Ambiente docker que inicializa um servidor php 8.3 na porta 8000, via nginx.
+
 # Requisitos
-- [Docker Engine](https://docs.docker.com/engine/install/) instalado
-- Make (`sudo apt install make`)
+- [Docker Engine](https://docs.docker.com/engine/install/)
+- Make
+  -- Debian/Ubuntu: (`sudo apt install make`)
+  -- MacOS: `xcode-select --install`
+  -- Windows: `choco install make`
 
 # Instalação
 - `sudo make build && sudo make run`
 
 # Ligar/desligar o container
-- `sudo make start`: Inicializa o container
-- `sudo make stop`: Para o container
+- Inicializar o container: `sudo make start`
+- Parar o container: `sudo make stop`
 
 # Uso
-- Seus arquivos php podem ser acessados pelo http://localhost:8000
-- Crie seus prórpios arquivos dentro da pasta `exercicios` e acesse-os como a seguir http://localhost:8000/00/teste.php
+- Seus arquivos php podem ser acessados em http://localhost:8000
+- Crie seus prórpios arquivos dentro da pasta `exercicios` e acesse-os como a seguir: http://localhost:8000/00/teste.php
