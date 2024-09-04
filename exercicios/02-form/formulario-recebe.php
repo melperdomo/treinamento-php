@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Cadastro realizado com sucesso!</h1>
+    <h2>Confira os seus dados:</h2>
+
+    <div>
+        Nome Completo: <?php echo $_GET['nome']; ?>
+    </div>
+
+    <div>
+        Data de Nascimento: <?php echo $_GET['nascimento'];?>
+    </div>
+    
+    <div>
+        Sexo: <?php echo $_GET['sexo'];?>
+    </div>
+    
+    <div>
+        Celular: <?php echo $_GET['telefone'];?>
+    </div>
+    
+    <div>
+        E-mail: <?php echo $_GET['email'];?>
+    </div>
+    
+    <div>
+        Preferências: <?php echo implode($_GET['preferencias']);?>
+    </div>
     
 </body>
 </html>

@@ -7,46 +7,55 @@
 </head>
 <body>
     <h1>Complete o seu cadastro:</h1>
-    <form action="/exercicios/02-form/formulario-recebe.php">
+    <form action="/02-form/formulario-recebe.php" method="GET">
         
         <p>
             <label>Nome Completo</label>
-                <input type="text" name="nome" id="inome" minlength="3" maxlength="30" placeholder="Nome completo" autocomplete="name" required>
+                <input type="text" name="nome" id="nome" minlength="3" maxlength="30" placeholder="Nome completo" required>
         </p>
         
         <p>
             <label>Data de Nascimento</label>
-                <input type="date" name="nascimento" id="inascimento" required>
+                <input type="date" name="nascimento" id="nascimento" required>
         </p>
         
         <p>
-            <label>Gênero</label>
-                <input type="radio" name="sexo" id="sexo" required>
-                <span>Masculino</span>
+            <label>Gênero
+                <input type="radio" name="sexo" id="sexo-masculino" value="Masculino">
+            Masculino
+            </label>
             
-            <label></label>
-                <input type="radio" name="sexo" id="sexo" required>
-                <span>Feminino</span>
+            <label>
+                <input type="radio" name="sexo" id="sexo-feminino" value="Feminino">
+            Feminino
+            </label>
         </p>
         
         <p>
             <label>Celular</label>
-                <input type="tel" name="telefone" id="itelefone" placeholder="(00)00000-0000" minlength="10" maxlength="11" required>
+                <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000" minlength="10" maxlength="11" required>
         </p>
 
         <p>
-            <label></label>
-                <input type="checkbox" name="opcoes-contato[]" id="iopcoes-contato" value="email">
-                <span>Aceito receber e-mails com informações importantes.</span><br>
-            
-            <label></label>
-                <input type="checkbox" name="opcoes-contato[]" id="iopcoes-contato" value="sms">
-                <span>Aceito receber SMS com informações importantes.</span><br>
+            <label>E-mail Corporativo</label>
+                <input type="email" name="email" id="email" placeholder="nome@exemplo.com" required>
+        </p>
 
+        <p>
+            <label>
+                <input type="checkbox" name="preferencias[]" id="preferencias" value="Receber emails.">
+                <span> Aceito receber e-mails com informações importantes.</span><br>
+            </label>
+            
+            <label>
+                <input type="checkbox" name="preferencias[]" id="preferencias" value="Receber SMS.">
+                <span> Aceito receber SMS com informações importantes.</span><br>
+            </label>
                 
-            <label></label>
-                <input type="checkbox" name="opcoes-contato[]" id="iopcoes-contato" value="whatsapp">
-                Aceito receber WhatsApp com informações importantes.<br>
+            <label>
+                <input type="checkbox" name="preferencias[]" id="preferencias" value="Ser contatado via WhatsApp.">
+                 Aceito ser contatado via WhatsApp sobre informações importantes.<br>
+            </label>
         </p>
     
         <button type="reset">Apagar Dados</button>
