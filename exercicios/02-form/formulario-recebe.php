@@ -30,7 +30,7 @@
     </div>
     
     <div>
-        Preferências: <?php echo implode($_GET['preferencias']);?>
+        Preferências:</br><?php echo implode("</br>", $_GET['preferencias']);?>
     </div>
     
 </body>

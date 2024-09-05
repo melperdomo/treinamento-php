@@ -16,11 +16,11 @@
         
         <p>
             <label>Data de Nascimento</label>
-                <input type="date" name="nascimento" id="nascimento" required>
+                <input type="date" name="date" id="nascimento" required>
         </p>
         
         <p>
-            <label>Gênero
+            <label>Sexo
                 <input type="radio" name="sexo" id="sexo-masculino" value="Masculino">
             Masculino
             </label>
@@ -33,7 +33,7 @@
         
         <p>
             <label>Celular</label>
-                <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000" minlength="10" maxlength="11" required>
+                <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000" minlength="10" maxlength="14" required>
         </p>
 
         <p>
