@@ -11,7 +11,7 @@
         <h2>E tenha mais uma certeza de que precisa voltar pra academia.</h2>
     </header>
     <main>
-        <form action="/IMC/imc-recebe.php" method="GET">
+        <form>
             <p>
                 <label for="peso">Qual é o seu peso?</label>
                 <input type="number" name="peso" id="peso" step="0.01" placeholder="50.5" required> Kg
@@ -25,5 +25,20 @@
             <button type="submit">Enviar Dados</button>
         </form>
     </main>
+    <footer>
+    <h2>
+        O seu IMC é 
+        <?php 
+        $peso = @$_GET['peso'];
+        $altura = @$_GET['altura'];
+        echo number_format($peso / ($altura ** 2),2);
+        /*
+        Outra maneira, na mesma linha com o GET:
+        $imc = ($_GET['peso'] / ($_GET['altura'] ** 2));
+        echo number_format($imc, 1, ',');
+        */
+        ?>
+        </h2>
+    </footer>
 </body>
 </html>

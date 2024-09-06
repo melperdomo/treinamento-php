@@ -9,10 +9,10 @@
         <h2>
         O valor atualizado está em R$
         <?php 
-        $d = $_GET['divida'];
-        $j = $_GET['juros'];
-        $p = $_GET['periodo'];
-        $valor_atualizado = $d * pow((1 + ($j / 100)), $p);
+        $divida = $_GET['divida'];
+        $juros = $_GET['juros'];
+        $periodo = $_GET['periodo'];
+        $valor_atualizado = $divida * pow((1 + ($juros / 100)), $periodo);
         echo number_format($valor_atualizado, 2, ',', '.');
         ?>
         .</h2>

@@ -25,10 +25,6 @@
                 <label for="idperiodo">Informe o período em meses:</label>
                 <input type="number" name="periodo" id="idperiodo" required> meses
             </p>
-
-            <!-- 
-            divida x (1 + (juros / 100))^período
-            -->
             
             <button type="reset">Apagar Dados</button>
             <button type="submit">Enviar Dados</button>
