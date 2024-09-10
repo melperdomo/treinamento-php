@@ -29,10 +29,11 @@
         <h2>
             O seu IMC é: </br>
             <?php
-            $peso = @$_GET['peso'];
-            $altura = @$_GET['altura'];
+            $peso = $_GET['peso'] ?? '0'; // ?? ou pega isso, ou pega aquilo (se não houver valor no GET, ele coloca outra coisa, e dispensa o uso do @)
+            $altura = $_GET['altura'] ?? '0';
+            $imc = 0;
 
-            if (empty($peso) || empty($altura) || $peso == '0' || $altura == '0') {
+            if (empty($peso) || empty($altura)) {
                 echo "Para calcular, informe o seu peso e altura.";
             } else {
                 $imc = $peso / ($altura ** 2);
@@ -43,8 +44,7 @@
 
         <div class="resultados">
             <?php
-            if (!empty($imc)) {
-                if ($imc < 18.5) : ?>
+                if ($imc > 0 && $imc < 18.5) : ?>
                 <h3>Abaixo do Peso (IMC abaixo de 18,5)</h3>
                 <p>É provável que o indivíduo possa estar enfrentando uma carência nutricional e riscos de saúde associados à desnutrição. </br>Caso seu peso esteja dentro dessa categoria, é fundamental buscar aconselhamento médico e nutricional para avaliar a causa e ganhar peso de maneira saudável.</p>
             
@@ -64,18 +64,17 @@
                 <h3>Obesidade Grau II (IMC entre 35 e 39,9)</h3>
                 <p>Já na obesidade grau II, os riscos à saúde são significativamente elevados, e a possibilidade de desenvolver diabetes tipo 2, apneia do sono e outras condições graves é maior. </br>A intervenção médica e mudanças sustentáveis no estilo de vida são fundamentais para melhorar a saúde.</p>
 
-                <?php else : ?>
+                <?php elseif ($imc > 40) : ?>
                 <h3>Obesidade Grau III (IMC acima de 40) ou obesidade mórbida</h3>
                 <p>Essa faixa apresenta riscos extremamente graves à saúde. </br>Suas complicações podem incluir problemas cardíacos graves, dificuldades respiratórias e maior suscetibilidade a infecções.</p>
                 <?php endif; 
-            }
             ?>
         </div>
 
     </main>
     <footer>
         <p><strong>Lembre-se:</strong> Pressões estéticas impostas pela sociedade não devem ser levadas em conta para definir a sua qualidade de vida e bem-estar. </p>
-        <h4>Procure realizar atividades físicas, busque auxílio médico e faça exames regularmente.</h4>
+        <h4>Realize atividades físicas, busque auxílio médico e faça exames regularmente.</h4>
     </footer>
 </body>
 </html>
