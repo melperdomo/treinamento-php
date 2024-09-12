@@ -36,8 +36,8 @@
                 <img src="https://tudocommoda.com/wp-content/uploads/2020/05/estilo-alternativo-feminino.jpg" alt="">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEN9r4rxDbXC9h9x1IlGCIAmTKSBzS-YR6eJJDrzxbw5TJCj0G38AOQ0QLN61HQTFMhxQkHOiv0C7d48OlOCrVIQZin3_Snn2SjaYhxtjLftrSbMD_NW3lMyq4zuZ9uYEdbr9faUugotvYfy7iWi9sZ0Ueret7aypIfYIJ-jYmJVckaPZQVbP1W6QcEQ/s847/Para%20usar%20muito%20no%20outono%20saia%20e%20su%C3%A9ter%202.jpg" alt="">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpNM7bmv252t9b3Gd53X8DB4IYAFcAKwF4-BoBCkHRjM-czBpFw2uT9b2D48HoYXqrJwSHP_3Wh4EQkeXWBuBNqU14hQP3Y5gC-5wNO26aPwbv7uWgTMbeeS9vHe4EBpBo2Jia_xp6o-O0-voZXD6ppWPEfxzH0es34i-_DjHxHwxoBYqu3rKx4ti9yg/w1200-h630-p-k-no-nu/looks%20para%20usar%20no%20outono.jpg" alt="">
-                <?php break; ?>
-                <?php case "inverno": ?>
+            <?php break; ?>
+            <?php case "inverno": ?>
                 <img src="https://i.pinimg.com/564x/ea/f4/f9/eaf4f9473e22349ce545904b9443e4d5.jpg" alt="">
                 <img src="https://quadrofeminino.com/wp-content/uploads/2023/08/looks-motociclista-feminino.jpg" alt="">
                 <img src="https://i.pinimg.com/236x/87/98/99/8798995fa6233ec4bd68bba62a49f59b.jpg" alt="">
