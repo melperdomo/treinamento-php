@@ -29,7 +29,7 @@
         <h2>
             O seu IMC é: </br>
             <?php
-            $peso = $_GET['peso'] ?? '0'; // ?? ou pega isso, ou pega aquilo (se não houver valor no GET, ele coloca outra coisa, e dispensa o uso do @)
+            $peso = $_GET['peso'] ?? '0';
             $altura = $_GET['altura'] ?? '0';
             $imc = 0;
 
@@ -40,6 +40,15 @@
                 echo number_format($imc, 1, ',');
             }
             ?>
+            <!-- (??) pega o peso ou pega 0 (se não houver valor no GET, ele coloca o 0. Isso dispensa o uso do @ antes do GET, porque resolve o erro, ao invés de ignorar).
+
+            O empty, verifica se há valor atribuído.
+            Se estiver vazio, ele executa o echo.
+            Se houver valor, ele executa o else.
+
+            Outra maneira de fazer o cálculo, na mesma linha com o GET:
+            $imc = ($_GET['peso'] / ($_GET['altura'] ** 2));
+            echo number_format($imc, 1, ','); -->
         </h2>
 
         <div class="resultados">

@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Complete o seu cadastro:</h1>
-    <form action="/02-form/formulario-recebe.php" method="GET">
+    <form action="/02-form/cadastro-recebe.php" method="GET">
         
         <p>
             <label>Nome Completo</label>

@@ -9,14 +9,14 @@
     <h1>Exercício 01 de PHP</h1>
     <p>Alguns dados sobre mim, usando o comando echo:</p>
     
-    <h2>Método 1</h2>
+    <h2>Exemplo 1</h2>
     <?php $nome = "Melissa"; $idade = "32"; ?>
     <?php echo "Meu nome é $nome!."; ?></br>
     <?php echo "Há 5 anos, eu tinha " . ($idade - 5) . " anos."; ?></br>
     <?php echo "Hoje é dia " . date('d') . " do mês " . date('m') . " de " . date('Y') . ", e agora são " . date('h:i') . "."; ?></br>
     <?php echo "Em 7 dias, será " . date('d/m/Y', strtotime('+7 days')) . "."; ?></br>
     
-    <h2>Método 2</h2>
+    <h2>Exemplo 2</h2>
     <ul>
         <li>Meu nome é <?php echo "$nome!"; ?> </li>
         <li>Há 5 anos, eu tinha <?php echo ($idade - 5) . " anos."; ?> </li>
