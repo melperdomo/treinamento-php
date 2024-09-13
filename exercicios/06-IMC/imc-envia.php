@@ -76,7 +76,7 @@
                 <?php elseif ($imc > 40) : ?>
                 <h3>Obesidade Grau III (IMC acima de 40) ou obesidade mórbida</h3>
                 <p>Essa faixa apresenta riscos extremamente graves à saúde. </br>Suas complicações podem incluir problemas cardíacos graves, dificuldades respiratórias e maior suscetibilidade a infecções.</p>
-                <?php endif; 
+                <?php endif;
             ?>
         </div>
 

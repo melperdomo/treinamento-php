@@ -13,11 +13,6 @@
         $peso = $_POST['peso'];
         $altura = $_POST['altura'];
         echo number_format($peso / ($altura ** 2),2);
-        /*
-        Outra maneira, na mesma linha com o GET:
-        $imc = ($_GET['peso'] / ($_GET['altura'] ** 2));
-        echo number_format($imc, 1, ',');
-        */
         ?>
         </h2>
     </header>
