@@ -9,7 +9,7 @@
     <fieldset>
         <legend>Escolha sua região</legend>
         <form action="">
-            <select name="regiao">
+            <select name="regiao" required>
                 <option value=""></option>
                 <option value="CO">Centro-Oeste</option>
                 <option value="NE">Nordeste</option>
