@@ -6,8 +6,8 @@
     <title>Array Simples</title>
 </head>
 <body>
-    <h1>Animais Belíssimos</h1>
-    <?php $animais = ['gatos', 'tigres', 'pumas', 'racoons', 'ouriços'];?>
+    <h3>Animais Belíssimos</h3>
+    <?php $animais = ['Gatos', 'Tigres', 'Pumas', 'Racoons', 'Raposas'];?>
     <?php echo $animais[0];?></br>
     <?php echo $animais[2];?></br>
     <?php echo $animais[4];?></br>

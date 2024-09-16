@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h2>Aqui estão 5 países excelentes para morar e trabalhar como programador:</h2>
+    <h3>Aqui estão 5 países excelentes para morar e trabalhar como programador:</h3>
     
     <?php 
     $paises = [

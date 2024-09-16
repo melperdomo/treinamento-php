@@ -6,7 +6,7 @@
     <title>Array Chaveado</title>
 </head>
 <body>
-    <h2>Confirme o endereço:</h2>
+    <h3>Confirme o endereço:</h3>
     <?php 
     $endereco = [
         'rua' => 'Ana Beato Felipe',
