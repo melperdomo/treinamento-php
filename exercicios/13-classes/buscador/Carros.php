@@ -2,11 +2,11 @@
 include "Buscador.php";
 $marca = @$_GET['marca'] ?? '';
 $modelo = @$_GET['modelo'] ?? '';
-$anoMin = @$_GET['ano-min'] ?? '';
-$anoMax = @$_GET['ano-max'] ?? '';
+$ano_min = intval(@$_GET['ano-min']) ?? 0;
+$ano_max = intval(@$_GET['ano-max']) ?? 0;
 $categoria = @$_GET['categoria'] ?? '';
-$precoMin = @$_GET['preco-min'] ?? '';
-$precoMax = @$_GET['preco-max'] ?? '';
+$preco_min = floatval(@$_GET['preco-min']) ?? 0;
+$preco_max = floatval(@$_GET['preco-max']) ?? 0;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,7 +19,7 @@ $precoMax = @$_GET['preco-max'] ?? '';
 
 <body>
     <h1>Exercício 03</h1>
-    <p>Só por Deus</p>
+    <p>Construa um filtro de carros que faz busca por marca, modelo, ano, categoria e preço.</p>
     <form>
         <label for="marca">Marca </label>
         <select name="marca" id="marca">
@@ -63,6 +63,7 @@ $precoMax = @$_GET['preco-max'] ?? '';
 
         <label for="categoria">Categoria </label>
         <select name="categoria" id="categoria">
+            <option value=""></option>
             <option value="Sedan">Sedan</option>
             <option value="Hatch">Hatch</option>
             <option value="SUV">SUV</option>
@@ -71,18 +72,18 @@ $precoMax = @$_GET['preco-max'] ?? '';
         <br>
 
         <label for="preco-min">Preço Mínimo </label>
-        <input type="number" id="preco-min" name="preco-min" step="0.500" min="0">
+        <input type="number" id="preco-min" name="preco-min" step="0.5" min="0" placeholder="20000">
         <br>
 
         <label for="preco-max">Preço Máximo </label>
-        <input type="number" id="preco-max" name="preco-max" step="1" min="0">
+        <input type="number" id="preco-max" name="preco-max" step="0.5" min="0" placeholder="150000">
         <br>
 
         <button type="submit"> Buscar </button>
     </form>
     <h2>Que tal estes?</h2>
     <div>
-        <?php $marcasCarros = Buscador::filtrarMarca($marca) ?>
+        <?php $ano_carros = Buscador::filtraAno($ano_min, $ano_max) ?>
         <table>
             <tr>
                 <th>Marca</th>
@@ -91,13 +92,13 @@ $precoMax = @$_GET['preco-max'] ?? '';
                 <th>Categoria</th>
                 <th>Preço</th>
             </tr>
-            <?php foreach ($marcasCarros as $carro): ?>
+            <?php foreach ($ano_carros as $carro): ?>
                 <tr>
                     <td><?php echo $carro['marca'] ?></td>
                     <td><?php echo $carro['modelo'] ?></td>
                     <td><?php echo $carro['ano'] ?></td>
                     <td><?php echo $carro['categoria'] ?></td>
-                    <td><?php echo $carro['preco'] ?></td>
+                    <td><?php echo "R$ " . number_format($carro['preco'], 2, ',','.')?></td>
                 </tr>
             <?php endforeach ?>
         </table>
