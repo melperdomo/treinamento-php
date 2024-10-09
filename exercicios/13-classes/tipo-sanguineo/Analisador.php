@@ -1,6 +1,9 @@
-<?php 
-class Analisador {
-    static function doarPara(string $tipoSang):array {
+<?php
+
+class Analisador
+{
+    static function doarPara(string $tipoSang): array
+    {
         $compatibilidade = [
             "A+" => ['A+', 'AB+'],
             "A-" => ['A-', 'A+', 'AB-', 'AB+'],
@@ -13,15 +16,16 @@ class Analisador {
         ];
         return $compatibilidade[$tipoSang];
     }
-    static function recebeDe(string $tipoSang):array {
+    static function recebeDe(string $tipoSang): array
+    {
         $compatibilidade = [
-            "A+" => ["A+","A-","O+","O-"],
-            "A-" => ["A-","O-"],
-            "B+" => ["B+","B-","O+","O-"],
-            "B-" => ["B-","O-"],
-            "AB+" => ["Todos os tipos."],
+            "A+" => ["A+", "A-", "O+", "O-"],
+            "A-" => ["A-", "O-"],
+            "B+" => ["B+", "B-", "O+", "O-"],
+            "B-" => ["B-", "O-"],
+            "AB+" => ["todos os tipos."],
             "AB-" => ["A-", "B-", "O-", "AB-"],
-            "O+" => ["O+","O-"],
+            "O+" => ["O+", "O-"],
             "O-" => ["O-"],
         ];
         return $compatibilidade[$tipoSang];
