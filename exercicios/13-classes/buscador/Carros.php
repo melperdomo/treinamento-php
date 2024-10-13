@@ -83,7 +83,7 @@ $preco_max = floatval(@$_GET['preco-max']) ?? 0;
     </form>
     <h2>Que tal estes?</h2>
     <div>
-        <?php $ano_carros = Buscador::filtraAno($ano_min, $ano_max) ?>
+        <?php $carros = Buscador::filtrar($marca, $modelo, $categoria, $ano_min, $ano_max, $preco_min, $preco_max) ?>
         <table>
             <tr>
                 <th>Marca</th>
@@ -92,7 +92,7 @@ $preco_max = floatval(@$_GET['preco-max']) ?? 0;
                 <th>Categoria</th>
                 <th>Preço</th>
             </tr>
-            <?php foreach ($ano_carros as $carro): ?>
+            <?php foreach ($carros as $carro): ?>
                 <tr>
                     <td><?php echo $carro['marca'] ?></td>
                     <td><?php echo $carro['modelo'] ?></td>

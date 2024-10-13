@@ -130,4 +130,15 @@ class Buscador
         }
         return $ano_carros;
     }
+    static function filtrar(string $marca = "", string $modelo = "", string $categoria = "", float $preco_min = 0, float $preco_max = 0, int $ano_min = 0, int $ano_max = 0) {
+        $carros_marcas = static::filtraMarca($marca);
+        $carros_modelos = static::filtraModelo($modelo);
+        $carros_categorias = static::filtraCategoria($categoria);
+        $carros_precos = static::filtraPreco($preco_min, $preco_max);
+        $carros_anos = static::filtraAno($ano_min, $ano_max);
+        $carros = array_merge($carros_marcas, $carros_modelos, $carros_categorias, $carros_precos, $carros_anos);
+        $carros = array_diff($carros, array_unique($carros));
+        var_dump($carros);
+        exit;
+    }
 }
