@@ -13,7 +13,8 @@
         }
 
         body {
-            background: #1B2338 no-repeat center;
+            background: url('/imagens/darkstar_bg.png') no-repeat center;
+            background-size: cover;
             line-height: 1.5em;
         }
 
