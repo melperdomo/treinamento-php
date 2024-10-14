@@ -1,10 +1,14 @@
+<?php
+$nome = "Melissa";
+$idade = date('Y') - 1992;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício 03</title>
+    <title>Exercício 02</title>
     <style>
         * {
             margin: 0;
@@ -14,16 +18,20 @@
 
         body {
             background: #1B2338 no-repeat center;
-            line-height: 1.5em;
+            background-size: cover;
         }
 
         div {
+            padding: auto;
+            margin: auto;
             background-color: whitesmoke;
             width: 40%;
-            margin: auto;
-            padding: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             border-radius: 15px;
             box-shadow: 2px 2px 5px black;
+            list-style-position: inside;
         }
 
         h1 {
@@ -43,29 +51,15 @@
 
 <body>
     <div>
-        <h1>Cadastro realizado com sucesso!</h1>
-        <h2>Confira os seus dados:</h2>
-
-        <p>
-            <strong>Nome Completo:</strong> <?php echo @$_GET['nome']; ?>
-        </p>
-        <p>
-            <strong>Data de Nascimento:</strong> <?php echo @$_GET['nascimento']; ?>
-        </p>
-        <p>
-            <strong>Sexo:</strong> <?php echo @$_GET['sexo']; ?>
-        </p>
-        <p>
-            <strong>Celular:</strong> <?php echo @$_GET['telefone']; ?>
-        </p>
-        <p>
-            <strong>E-mail:</strong> <?php echo @$_GET['email']; ?>
-        </p>
-        <p>
-            <strong>Preferências:</strong><?php echo implode("</br>", $_GET['preferencias']);?>
-        </p>
+        <h1>PHP - Exercício 02</h1>
+        <h2>Alguns dados sobre mim, usando o comando echo:</h2>
+        <ul>
+            <li>Meu nome é <?php echo "$nome!"?></li>
+            <li>Há 5 anos, eu tinha <?php echo ($idade - 5) . " anos."?></li>
+            <li>Hoje é dia <?php echo date('d')?> do mês <?php echo date('m')?> de <?php echo date('Y')?>, e agora são <?php echo date('h:i')?>.</li>
+            <li>Em 7 dias, será <?php echo date('d/m/Y', strtotime('+7 days'))?>.</li>
+        </ul>
     </div>
-
 </body>
 
 </html>
