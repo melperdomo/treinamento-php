@@ -17,7 +17,7 @@ $idade = date('Y') - 1992;
         }
 
         body {
-            background: #1B2338 no-repeat center;
+            background-image: url('/imagens/darkstar_bg.png');
             background-size: cover;
         }
 
