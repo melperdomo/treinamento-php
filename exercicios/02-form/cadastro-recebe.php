@@ -15,6 +15,7 @@
         body {
             background: url('/imagens/darkstar_bg.png') no-repeat center;
             background-size: cover;
+            background-attachment: fixed;
             line-height: 1.5em;
         }
 

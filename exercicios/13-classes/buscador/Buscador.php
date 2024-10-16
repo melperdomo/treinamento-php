@@ -80,65 +80,100 @@ class Buscador
             'preco' => 20000.00
         ],
     ];
+
     static function filtraMarca(string $marca):array
     {
-        $marcas_carros = [];
-        foreach (static::CARROS as $carro) {
-            if ($carro['marca'] == $marca) {
-                $marcas_carros[] = $carro;
-            }
+        // $marcas_carros = [];
+        // foreach (static::CARROS as $carro) {
+        //     if ($carro['marca'] == $marca) {
+        //         $marcas_carros[] = $carro;
+        //     }
+        // }
+        // return $marcas_carros;
+        if (empty($marca)) {
+            return static::CARROS;
         }
-        return $marcas_carros;
+        return array_filter(static::CARROS, function($carro) use($marca) {
+            return ($carro['marca'] == $marca);
+        });
     }
+
     static function filtraModelo(string $modelo):array
     {
-        $modelo_Carros = [];
-        foreach (static::CARROS as $carro) {
-            if ($carro['modelo'] == $modelo) {
-                $modelo_Carros[] = $carro;
-            }
+        // $modelo_Carros = [];
+        // foreach (static::CARROS as $carro) {
+        //     if ($carro['modelo'] == $modelo) {
+        //         $modelo_Carros[] = $carro;
+        //     }
+        // }
+        // return $modelo_Carros;
+        if (empty($modelo)){
+            return static::CARROS;
         }
-        return $modelo_Carros;
+        return array_filter(static::CARROS, function($carro) use($modelo) {
+            return ($carro['modelo'] == $modelo);
+        });
     }
+
     static function filtraCategoria(string $categoria):array
     {
-        $categoria_carros = [];
-        foreach (static::CARROS as $carro) {
-            if ($carro['categoria'] == $categoria) {
-                $categoria_carros[] = $carro;
-            }
+        // $categoria_carros = [];
+        // foreach (static::CARROS as $carro) {
+        //     if ($carro['categoria'] == $categoria) {
+        //         $categoria_carros[] = $carro;
+        //     }
+        // }
+        // return $categoria_carros;
+        if (empty($categoria)){
+            return static::CARROS;
         }
-        return $categoria_carros;
+        return array_filter(static::CARROS, function($carro) use($categoria) {
+            return ($carro['categoria'] == $categoria);
+        });
     }
+
     static function filtraPreco(float $preco_min, float $preco_max):array
     {
-        $preco_carros = [];
-        foreach (static::CARROS as $carro) {
-            if ($carro['preco'] >= $preco_min && $carro['preco'] <= $preco_max) {
-                $preco_carros[] = $carro;
-            }
+        // $preco_carros = [];
+        // foreach (static::CARROS as $carro) {
+        //     if ($carro['preco'] >= $preco_min && $carro['preco'] <= $preco_max) {
+        //         $preco_carros[] = $carro;
+        //     }
+        // }
+        // return $preco_carros;
+        if (empty($preco_min) && empty($preco_max)) {
+            return static::CARROS;
         }
-        return $preco_carros;
+        return array_filter(static::CARROS, function($carro) use($preco_min, $preco_max) {
+            return ($carro['preco'] >= $preco_min && $carro['preco'] <= $preco_max);
+        });
     }
+
     static function filtraAno(int $ano_min, int $ano_max):array
     {
-        $ano_carros = [];
-        foreach (static::CARROS as $carro) {
-            if ($carro['ano'] >= $ano_min && $carro['ano'] <= $ano_max) {
-                $ano_carros[] = $carro;
-            }
+        // $ano_carros = [];
+        // foreach (static::CARROS as $carro) {
+        //     if ($carro['ano'] >= $ano_min && $carro['ano'] <= $ano_max) {
+        //         $ano_carros[] = $carro;
+        //     }
+        // }
+        // return $ano_carros;
+        if (empty($ano_min) && empty($preco_max)) {
+            return static::CARROS;
         }
-        return $ano_carros;
+        return array_filter(static::CARROS, function($carro) use($ano_min, $ano_max) {
+            return ($carro['ano'] >= $ano_min && $carro['ano'] <= $ano_max);
+        });
     }
+
     static function filtrar(string $marca = "", string $modelo = "", string $categoria = "", float $preco_min = 0, float $preco_max = 0, int $ano_min = 0, int $ano_max = 0) {
         $carros_marcas = static::filtraMarca($marca);
         $carros_modelos = static::filtraModelo($modelo);
         $carros_categorias = static::filtraCategoria($categoria);
         $carros_precos = static::filtraPreco($preco_min, $preco_max);
         $carros_anos = static::filtraAno($ano_min, $ano_max);
-        $carros = array_merge($carros_marcas, $carros_modelos, $carros_categorias, $carros_precos, $carros_anos);
-        $carros = array_diff($carros, array_unique($carros));
-        var_dump($carros);
-        exit;
+
     }
+
+
 }
