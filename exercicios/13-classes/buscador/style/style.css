@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 10px;
+    font-family: Tahoma, sans-serif;
+}
+
+body {
+    background: url('/imagens/darkstar_bg.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    background-color: #FCE592;
+    font-size: 1em;
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    font-size: 1em;
+    text-align: center;
+}
+
+p {
+    font-size: 1em;
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    
+}
+
+.buscador {
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px black;
+    list-style-position: inside;
+}
+
+@media (max-width: 768px) {
+    .conteiner {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .buscador {
+        width: 100%;
+    }
+}
+
+.buscador-opcoes {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;
+}
+
+label {
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+.buscador-item {
+    font-size: 1em;
+    padding: 5px;
+    width: 100%;
+}
+
+.buscador-item-number {
+    padding: 4px;
+}
+
+button {
+    grid-column: span 2;
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 1em;
+    background-color: #FCE592;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #a64449;
+    color: whitesmoke;
+}
+
+.buscador-resultados {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.buscador-resultados th {
+    background-color: #FCE592;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.buscador-resultados td {
+    background-color: whitesmoke;
+    padding: 5px;
+    text-align: center;
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .buscador-resultados {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .buscador-resultados th, .buscador-resultados td {
+        white-space: nowrap;
+        padding: 8px;
+    }
+}

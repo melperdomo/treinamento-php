@@ -95,6 +95,7 @@ class Buscador
         }
         return array_filter(static::CARROS, function($carro) use($marca) {
             return ($carro['marca'] == $marca);
+            // uma verificação com o array filter me retorna um resultado boleano true or false
         });
     }
 
@@ -132,7 +133,7 @@ class Buscador
         });
     }
 
-    static function filtraPreco(float $preco_min, float $preco_max):array
+    static function filtraPrecoMin(float $preco_min):array
     {
         // $preco_carros = [];
         // foreach (static::CARROS as $carro) {
@@ -141,15 +142,25 @@ class Buscador
         //     }
         // }
         // return $preco_carros;
-        if (empty($preco_min) && empty($preco_max)) {
+        if (empty($preco_min)){
             return static::CARROS;
         }
-        return array_filter(static::CARROS, function($carro) use($preco_min, $preco_max) {
-            return ($carro['preco'] >= $preco_min && $carro['preco'] <= $preco_max);
+        return array_filter(static::CARROS, function($carro) use($preco_min) {
+            return ($carro['preco'] >= $preco_min);
         });
     }
 
-    static function filtraAno(int $ano_min, int $ano_max):array
+    static function filtraPrecoMax(float $preco_max):array
+    {
+        if (empty($preco_max)){
+            return static::CARROS;
+        }
+        return array_filter(static::CARROS, function ($carro) use($preco_max) {
+            return ($carro['preco'] <= $preco_max);
+        });
+    }
+
+    static function filtraAnoMin(int $ano_min):array
     {
         // $ano_carros = [];
         // foreach (static::CARROS as $carro) {
@@ -158,21 +169,40 @@ class Buscador
         //     }
         // }
         // return $ano_carros;
-        if (empty($ano_min) && empty($preco_max)) {
+        if (empty($ano_min)) {
             return static::CARROS;
         }
-        return array_filter(static::CARROS, function($carro) use($ano_min, $ano_max) {
-            return ($carro['ano'] >= $ano_min && $carro['ano'] <= $ano_max);
+        return array_filter(static::CARROS, function($carro) use($ano_min) {
+            return ($carro['ano'] >= $ano_min);
+        });
+    }
+
+    static function filtraAnoMax(int $ano_max):array
+    {
+        if (empty($ano_max)) {
+            return static::CARROS;
+        }
+        return array_filter(static::CARROS, function($carro) use($ano_max) {
+            return ($carro['ano'] <= $ano_max);
         });
     }
 
     static function filtrar(string $marca = "", string $modelo = "", string $categoria = "", float $preco_min = 0, float $preco_max = 0, int $ano_min = 0, int $ano_max = 0) {
-        $carros_marcas = static::filtraMarca($marca);
-        $carros_modelos = static::filtraModelo($modelo);
-        $carros_categorias = static::filtraCategoria($categoria);
-        $carros_precos = static::filtraPreco($preco_min, $preco_max);
-        $carros_anos = static::filtraAno($ano_min, $ano_max);
-
+        $carros_da_marca = static::filtraMarca($marca);
+        $carros_do_modelo = static::filtraModelo($modelo);
+        $carros_da_categoria = static::filtraCategoria($categoria);
+        $carros_do_preco_min = static::filtraPrecoMin($preco_min);
+        $carros_do_preco_max = static::filtraPrecoMax($preco_max);
+        $carros_do_ano_min = static::filtraAnoMin($ano_min);
+        $carros_do_ano_max = static::filtraAnoMax($ano_max);
+        $carros_encontrados = array_filter(static::CARROS, function($carro) use($carros_da_marca, $carros_do_modelo, $carros_da_categoria, $carros_do_preco_min, $carros_do_preco_max, $carros_do_ano_min, $carros_do_ano_max) {
+            if (in_array($carro, $carros_da_marca) && in_array($carro, $carros_do_modelo) && in_array($carro, $carros_da_categoria) && in_array($carro, $carros_do_preco_min) && in_array($carro, $carros_do_preco_max) && in_array($carro, $carros_do_ano_min) && in_array($carro, $carros_do_ano_max)) {
+                return true; 
+            } else {
+                return false;
+            }
+        });
+        return $carros_encontrados;
     }
 
 
